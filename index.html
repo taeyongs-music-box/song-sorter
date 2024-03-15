@@ -12,23 +12,80 @@
 <meta http-equiv="Content-Style-Type" content="text/css">
  
 <meta http-equiv="Content-Script-Type" content="text/javascript">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
  
 <script type="text/javascript">
  
-<!--
+
  
 var namMember = new Array(
- 
-"option 1",
- 
-"option 2",
- 
-"option 3",
+/*
+"1",
+"2",
+"3",
+"4",
+"5"
+*/
 
-"option 4",
+"GTA1", 
+"GTA2", 
+"Fine", 
+"Blue", 
+"Swimming Pool", 
+"Monroe", 
+"Rose", 
+"Dark Clouds", 
+"Dark Clouds (Remix)", 
 
-"option 5"
+"SHALALA", 
+"GWANDO", 
+"Virtual Insanity", 
+"Move Mood Mode", 
+"RUBY",
+"404 File Not Found",
+"Back To The Past", 
+
+"TAP", 
+"Moon Tour", 
+"Run Away", 
+"APE", 
+"Ups & Downs",
+"404 Loading",
+
+"Long Flight", 
+"Love Theory",
+"Hotel del Luna", 
+"Cure", 
+"AROUND",
+"Lonely",
+"Ghost",
+
+<!-- concert songs -->
+
+"Concrete",
+"YES", 
+"H.E.R", 
+"Moonlight", 
+"Back", 
+"Solar Eclipse",
+"What Is Love",
+
+<!-- collabs -->
  
+"Amino Acid",
+"Light Bulb",
+"Mood",
+"Be Natural",
+"ZOO", 
+"Swipe", 
+"Lit", 
+"City Lights", 
+"Skip",
+"Diamonds",
+"Open The Door",
+"All Day",
+"The Himalayas"
  
 );
  
@@ -416,15 +473,15 @@ var i;
  
  
  
-str += "<table style=\"width:200px; font-size:18px; line-height:120%; margin-left:auto; margin-right:auto; border:1px solid #000; border-collapse:collapse\" align=\"center\">";
+str += "<br/><table style=\"width:90%; max-width:500px; font-size:14pt; line-height:120%; margin-left:auto; margin-right:auto; padding:3px 0px; background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)); backdrop-filter: blur(20px);border:1px solid #000; border-collapse:collapse; color:#fff; font-family: Open Sans, Roboto, sans-serif; \" align=\"center\">";
  
-str += "<tr><td style=\"color:#ffffff; background-color:#e097d9; text-align:center;\">rank<\/td><td style=\"color:#ffffff; background-color:#e097d9; text-align:center;\">options<\/td><\/tr>";
+str += "<tr><td style=\"color:#000; background-color:#ff9999; padding:3px 0px; text-align:center;\">rank<\/td><td style=\"color:#000; background-color:#ff9999; text-align:center;\">song name<\/td><\/tr>";
  
  
  
 for (i=0; i<namMember.length; i++) {
  
-str += "<tr><td style=\"border:1px solid #000; text-align:center; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td><\/tr>";
+str += "<tr><td style=\"border:1px solid #000; text-align:center; padding:3px 0px; color:#000;\">"+ranking+"<\/td><td style=\"border:1px solid #000; padding:3px 0px; color:#000;\">"+namMember[lstMember[0][i]]+"<\/td><\/tr>";
  
 if (i<namMember.length-1) {
  
@@ -509,93 +566,116 @@ return str;
 </script>
  
 <style type="text/css">
- 
-<!--
- 
-#mainTable{
- 
-font-size: 19px;
- 
-font-family: 'Times New Roman', serif;
- 
-text-align: center;
- 
-vertical-align: middle;
- 
-width: 410px;
- 
-margin-left: auto;
- 
-margin-right: auto;
- 
-border-collapse: separate;
- 
-border-spacing: 10px 5px;
- 
-}
- 
-#leftField{
- 
-width: 120px;
- 
-height: 150px;
- 
-border: 1px solid #000;
- 
-cursor: pointer;
- 
-}
- 
-#rightField{
- 
-width: 120px;
- 
-height: 150px;
- 
-border: 1px solid #000;
- 
-cursor: pointer;
- 
-}
- 
-.middleField{
- 
-width: 120px;
- 
-height: 70px;
- 
-border: 1px solid #000;
- 
-cursor: pointer;
- 
-}
- 
-a{
- 
-color: #e097d9;
- 
-text-decoration : none;
- 
-}
- 
-a:hover{
- 
-color: #8f8f8f;
- 
-}
- 
+
 body {
- 
-width: 600px;
- 
-margin: 0 auto;
- 
-font-family: 'Times New Roman', erif;
- 
+	width: auto;
+	min-height: auto;
+	margin: 0 auto;
+	font-family: 'Open Sans', Sans-Serif;
+	display:flex;
+	flex-direction: column;
+	background-position:center;
+	background-image: url('https://i.imgur.com/dr677US.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	z-index:-1;
+}
+
+#page-container {
+	flex:1;
+	top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	position: relative;
+	min-height: 100vh; 
 }
  
--->
+#content-wrap {
+	color: #000;
+	margin: 0 5%;
+	   <!-- text-shadow: 1px 0px 2px #fff; -->
+}
  
+#instructions {
+	font-size: 12pt;
+	text-align: center;
+	
+}
+
+#mainTable{
+	font-size: 18pt;
+	text-align: center;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+	border-collapse: separate;
+	border-spacing: 4px 4px;
+}
+
+#leftField {
+	position:relative;
+	width: 40%;
+	height: 160px;
+	cursor: pointer;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 15px;
+	border:1px solid rgba(255, 255, 255, 0.18);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	<!-- box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; -->
+}
+ 
+#rightField {
+	position:relative;
+	width: 40%;
+	height: 160px;
+	cursor: pointer;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 15px;
+	border:1px solid rgba(255, 255, 255, 0.18);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	<!-- box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; -->
+}
+
+.middleField {
+	position:relative;
+	font-size: 14pt;
+	width: 10%;
+	height: 80px;
+	cursor: pointer;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 15px;
+	border:1px solid rgba(255, 255, 255, 0.18);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+	<!-- box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; -->
+}
+
+#footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0px;
+    bottom: 0;
+    left: 0;
+} 
+ 
+small {
+	color: #296E3C;
+	font-size: 12pt;
+	text-shadow: 1px 1px 0px #000000;
+}
+
+a {
+	color: #ff9999;
+	text-decoration : none;
+}
+
 </style>
  
  
@@ -610,102 +690,81 @@ font-family: 'Times New Roman', erif;
 <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
  
 <body text="#000000" bgcolor="#ffffff" link="#e097d9" vlink="#e097d9" alink="#79a2c9">
- 
- 
- 
-<p class="instructions">
-<center><br /><br />
-<b>SORTER NAME</b><br /><br>pick who you like better in each battle to get an accurate list of your<br />favorite members from the group.<br />note: hitting 'no opinion' or 'I like both' frequently will negatively affect your results.<br /><br /></center>
- 
- 
- 
-</p>
- 
- 
- 
-<table id="mainTable" align="center">
- 
-<tbody><tr>
- 
-<td id="battleNumber" colspan="3" style="padding-bottom: 10px;" style="text-align:center;"><b>battle #1<br>0% sorted.</b></td>
- 
-</tr>
- 
-<tr>
- 
-<td id="leftField" onclick="if(finishFlag==0) sortList(-1);" rowspan="2" style="text-align:center;"></td>
- 
-<td class="middleField" onclick="if(finishFlag==0) sortList(0);" style="text-align:center;">
- 
-I like both
- 
-</td>
- 
-<td id="rightField" onclick="if(finishFlag==0) sortList(1);" rowspan="2"style="text-align:center;"></td>
- 
-</tr>
- 
-<tr>
- 
-<td class="middleField" onclick="if(finishFlag==0) sortList(0);"style="text-align:center;">
- 
-no opinion
- 
-</td>
- 
-</tr>
- 
-</tbody></table>
- 
-<br><br>
- 
-<div id="resultField" style="text-align: center;">
- 
-<br>
- 
-</div>
- 
-<script type="text/javascript">
- 
-<!--
- 
-initList();
- 
-showImage();
- 
-//-->
- 
- 
-</script>
-<p class="other">
-<center><small><br /><br />used with permission.<br /><br/><a href="http://biasorter.tumblr.com/">created by biasorter</a>.
-</small></center></small>
-</p>
- 
-<!-- BEGIN TUMBLR CODE --><iframe id="tumblr_controls" width="1" height="1" frameborder="0" scrolling="no" style="position:absolute; z-index:2147483647; top:0; right:0; border:0; background-color:transparent; overflow:hidden; " src="http://assets.tumblr.com/assets/html/iframe/o.html?_v=dddebe193046ef922006b33d60687b05#src=http%3A%2F%2Froosterteethcs.tumblr.com%2Fask&amp;lang=en_US&amp;name=roosterteethcs&amp;avatar=http%3A%2F%2Fassets.tumblr.com%2Fimages%2Fdefault_avatar%2Fpyramid_open_64.png&amp;title=rt+character+sorter&amp;url=http%3A%2F%2Froosterteethcs.tumblr.com%2F&amp;page_slide=slide"></iframe><div id="teaser_iframe_container" style="display:none;"><iframe scrolling="no" frameborder="0" src="http://www.tumblr.com/assets/html/iframe/teaser.html?_v=0334cdd0135fa4ea13587cd37c2dcf98#src=http%3A%2F%2Froosterteethcs.tumblr.com%2Fask&amp;lang=en_US&amp;name=roosterteethcs&amp;avatar=http%3A%2F%2Fassets.tumblr.com%2Fimages%2Fdefault_avatar%2Fpyramid_open_64.png&amp;title=rt+character+sorter&amp;url=http%3A%2F%2Froosterteethcs.tumblr.com%2F&amp;page_slide=slide" id="teaser_iframe" width="1" height="1"></iframe></div><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><iframe onload="javascript:this.contentWindow.postMessage(['tick_google_analytics', '/ask?route=404_page'].join(';'), this.src.split('/analytics.html')[0]);  COMSCORE = true;this.contentWindow.postMessage('enable_comscore;' + window.location, this.src.split('/analytics.html')[0]);" src="http://assets.tumblr.com/analytics.html?9bbb9e7732da937858cd0531689c20b1" scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0 z-index:9999;" id="ga_target"></iframe><script type="text/javascript">
-      var _qevents = _qevents || [];
- 
-      (function() {
-       var elem = document.createElement('script');
- 
-       elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
-       elem.async = true;
-       elem.type = "text/javascript";
-       var scpt = document.getElementsByTagName('script')[0];
-       scpt.parentNode.insertBefore(elem, scpt);
-      })();
-    </script><script type="text/javascript">
-        _qevents.push( { qacct: 'p-19UtqE8ngoZbM' } );
-    </script><noscript><div style="display: none;"><img src="//pixel.quantserve.com/pixel/'p-19UtqE8ngoZbM'.gif" height="1" width="1" alt="Quantcast"/></div></noscript><script type="text/javascript">!function(s){s.src='http://www.tumblr.com/impixu?T=1389854658&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvcm9vc3RlcnRlZXRoY3MudHVtYmxyLmNvbVwvYXNrIiwicmVxdHlwZSI6MCwicm91dGUiOiI0MDRfcGFnZSJ9&U=GJPMNFPHIN&K=745811f0e9615242e744b26218c2e56a6c6b184a1315e6c9e9e871a0c242e3ab&R=http%3A%2F%2Froosterteethcs.tumblr.com%2F'.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="http://www.tumblr.com/impixu?T=1389854658&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvcm9vc3RlcnRlZXRoY3MudHVtYmxyLmNvbVwvYXNrIiwicmVxdHlwZSI6MCwicm91dGUiOiI0MDRfcGFnZSIsIm5vc2NyaXB0IjoxfQ==&U=GJPMNFPHIN&K=c7a8ec33be24dcae3b08d0ffc26af0508ef65362a18101b8963123d054b7f79e&R=http%3A%2F%2Froosterteethcs.tumblr.com%2F"></noscript><script type="text/javascript" src="http://l.yimg.com/ss/rapid-3.9.js"></script><script>
-                    (function(YAHOO) {
-                        if (YAHOO) {
-                            YAHOO.i13n.beacon_server = 'nol.yahoo.com';
-                            var keys = { pd:'404_page', _li:0, i_rad:0, i_strm:0 };
-                            YAHOO.rapid = new YAHOO.i13n.Rapid({spaceid:1197719233, oo:1, client_only:1, yql_enabled:false, keys:keys});
-                        }
-                    })(window.YAHOO);
-                </script><!-- END TUMBLR CODE -->
- 
+
+
+	<div id="page-container">
+		<div id="content-wrap">
+			<p>
+				<center id="instructions"><br/>
+					<b style="font-size:14pt">TAEYONG SONG SORTER</b><br/><br/>
+					Pick which song you like better in each battle to get an accurate ranking list of your favorite Taeyong songs.<br/><br/>
+					Note: choosing 'I like both' or 'no opinion' frequently will negatively affect your results.<br/>
+				</center>
+			</p>
+			 
+			<table id="mainTable" align="center">
+				<tbody>
+					<tr>
+						<td id="battleNumber" colspan="3" style="padding-bottom: 10px; font-size: 12pt; font-weight:bold; text-align:center;">
+							<b>battle #1<br>0% sorted.</b>
+						</td>
+					</tr>
+					 
+					<tr>
+						<td id="leftField" class="key" onclick="if(finishFlag==0) sortList(-1);" rowspan="2" style="text-align:center;">
+						</td>
+					
+						<td class="middleField" onclick="if(finishFlag==0) sortList(0);" style="text-align:center;">
+							I like both
+						</td>
+					 
+						<td id="rightField" onclick="if(finishFlag==0) sortList(1);" rowspan="2"style="text-align:center;">
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="middleField" onclick="if(finishFlag==0) sortList(0);"style="text-align:center;">
+						no opinion
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			 
+			<div id="resultField" style="text-align: center;">
+			 
+			 
+			</div>
+			
+			<div id="mvField" style="text-align: center;">
+			<br/>
+				<iframe src="https://www.youtube.com/embed/vjGIY_GyAz4" frameborder="0" allowfullscreen></iframe>
+			</div>
+			 
+			<script type="text/javascript"> // result table
+			 
+			<!--
+			 
+			initList();
+			 
+			showImage();
+			 
+			//-->
+			 
+			 
+			</script>
+		</div>
+		
+		<footer id="footer">
+			<p>
+					<small>
+						made by <a href="https://twitter.com/__misft">@__misft (Twitter/X)</a><br />
+						script by <a href="http://biasorter.tumblr.com/">biasorter (tumblr)</a>
+					</small>
+			</p>
+		</footer>
+	
+	</div>
+
 </body>
  
 </html>
