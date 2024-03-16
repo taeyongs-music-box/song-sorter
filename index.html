@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="http://assets.tumblr.com/assets/scripts/pre_tumblelog.js?_v=66ac555bc5745ebe20abdae7cbc40704"></script>
-<!doctype HTML>
 <link rel="shortcut icon" href="http://sv.tinypic.com?ref=qq68e9">
  
 <html>
@@ -14,18 +12,25 @@
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="robots" content="noindex" />
+
 <!-- opengraph tags because i forgot -->
-	
+<meta property="og:title" content="Taeyong song sorter"/>
+<meta property="og:description" content="Choose between songs to get a ranking list of your favorite Taeyong songs."/>
+<meta property="og:url" content="https://taeyongs-music-box.github.io/song-sorter/" />
+<meta property="og:image" content="https://i.imgur.com/dr677US.jpeg" />
+
+<!-- Twitter card tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Taeyong song sorter">
 <meta name="twitter:url" content="https://taeyongs-music-box.github.io/song-sorter/" />
 <meta name="twitter:description" content="Choose between songs to get a ranking list of your favorite Taeyong songs">
 <meta name="twitter:image" content="https://i.imgur.com/dr677US.jpeg">
 <meta name="twitter:creator" content="@__misft"> 
-	
+ 
 <script type="text/javascript">
  
-
  
 var namMember = new Array(
 /*
@@ -35,6 +40,8 @@ var namMember = new Array(
 "4",
 "5"
 */
+
+<!-- SoundCloud -->
 
 "GTA1", 
 "GTA2", 
@@ -46,6 +53,8 @@ var namMember = new Array(
 "Dark Clouds", 
 "Dark Clouds (Remix)", 
 
+<!-- LTY1 -->
+
 "SHALALA", 
 "GWANDO", 
 "Virtual Insanity", 
@@ -54,6 +63,8 @@ var namMember = new Array(
 "404 File Not Found",
 "Back To The Past", 
 
+<!-- LTY2 -->
+
 "TAP", 
 "Moon Tour", 
 "Run Away", 
@@ -61,8 +72,10 @@ var namMember = new Array(
 "Ups & Downs",
 "404 Loading",
 
+<!-- Spotify -->
+
 "Long Flight", 
-"Love Theory<br/>(ft. Wonstein",
+"Love Theory<br/>(ft. Wonstein)",
 "Love del Luna<br/>(ft. Punch)", 
 "Stay in My Life<br/>(ft. Taeil, Doyoung)",
 "Cure<br/>(ft. Yoo Young Jin)",
@@ -70,6 +83,7 @@ var namMember = new Array(
 "Lonely",
 "Ghost",
 
+/*
 <!-- concert songs -->
 
 "Concrete",
@@ -88,12 +102,12 @@ var namMember = new Array(
 "Swipe<br/>(ft. Ten)", 
 "Lit<br/>(ft. Mark)", 
 "City Lights<br/>(ft. U-Know)",
-"Skip<br/>(ft. KANGTA",
+"Skip<br/>(ft. KANGTA)",
 "Diamonds<br/>(ft. Suran)",
 "Open The Door",
 "All Day",
 "The Himalayas<br/>(ft. Mark)"
- 
+*/
 );
  
  
